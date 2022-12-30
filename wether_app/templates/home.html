@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wether App</title>
+</head>
+<body>
+    <center>
+
+        <form action="{% url 'home' %}" method='POST'>
+            {% csrf_token %}
+            <input type="text" name = 'city' >
+            <button type="submit">SUBMIT
+            </button>
+            
+        </form>
+    </center>
+
+    <center>
+    <div class="details">
+        <h3>{{city}}</h3>
+        <h3>Country code : {{data.Country}}</h3>
+        <h5>coordinate : {{data.Coordinate}}</h5>
+        <h5>Temprature : {{data.Temperature}}</h5>
+        <h5>Pressure : {{data.Pressure}}</h5>
+        <h5>Humidity : {{data.Humidity}}</h5>
+    </center>
+    
+    </div>
+</body>
+</html>
